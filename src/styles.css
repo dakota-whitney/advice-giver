@@ -8,7 +8,11 @@ body {
   text-align: center;
 }
 
+.modal-body {
+  font-size: 25px;
+}
+
 ul {
-  list-style-position: inside;
+  margin-top: 10%;
   font-size: 20px;
 }

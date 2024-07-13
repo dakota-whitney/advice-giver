@@ -9,9 +9,6 @@ export const Advice = () => {
     const adviceRes = await fetch("https://api.adviceslip.com/advice");
     const { slip } = await adviceRes.json();
     setAdvice(slip.advice);
-
-    const adviceHeading = document.querySelector("h1");
-    adviceHeading.innerText = slip.advice;
   };
 
   const handleSetSlips = () =>
