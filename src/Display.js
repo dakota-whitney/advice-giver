@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AdviceSlips } from "./Provider";
 
-export const Display = (props) => {
+export const AdviceDisplay = (props) => {
   return (
     <div>
       <button
@@ -44,16 +44,17 @@ export const Display = (props) => {
   );
 };
 
-export const Slips = () => {
-  const { slips } = useContext(AdviceSlips);
-
+export const SlipDisplay = (props) => {
   return (
-    <ul className="list-group">
-      {slips.map((slip, i) => (
-        <li className="list-group-item" key="{i}">
-          {slip}
-        </li>
-      ))}
-    </ul>
+    <div>
+      <ul className="list-group">
+        {props.slips.map((slip, i) => (
+          <li className="list-group-item" key="{i}">
+            {slip}
+          </li>
+        ))}
+      </ul>
+      <button className="btn btn-danger" onClick={props.clear}>Clear Advice</button>
+    </div>
   );
 };

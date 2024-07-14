@@ -1,7 +1,6 @@
 import "./styles.css";
 import { AdviceProvider } from "./Provider";
-import { Advice } from "./Advice";
-import { Slips } from "./Display";
+import { Advice, Slips } from "./Advice";
 
 export default function App() {
   return (

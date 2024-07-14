@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { Display } from "./Display";
+import { AdviceDisplay, SlipDisplay } from "./Display";
 import { AdviceSlips } from "./Provider";
 
 export const Advice = () => {
   const { advice, setAdvice, setSlips } = useContext(AdviceSlips);
 
-  const handleGetAdvice = async ({ target }) => {
+  const handleGetAdvice = async () => {
     const adviceRes = await fetch("https://api.adviceslip.com/advice");
     const { slip } = await adviceRes.json();
     setAdvice(slip.advice);
@@ -13,10 +13,25 @@ export const Advice = () => {
 
   const handleSetSlips = () =>
     setSlips((prevSlips) => {
-      return prevSlips.includes(advice) ? prevSlips : [...prevSlips, advice];
+      const slips = prevSlips.includes(advice) ? prevSlips : [...prevSlips, advice];
+      localStorage.setItem("slips", JSON.stringify(slips))
+      return slips;
     });
 
   return (
-    <Display slip={advice} advice={handleGetAdvice} slips={handleSetSlips} />
+    <AdviceDisplay slip={advice} advice={handleGetAdvice} slips={handleSetSlips} />
+  );
+};
+
+export const Slips = () => {
+  const { slips, setSlips } = useContext(AdviceSlips);
+
+  const handleClearSlips = () => {
+    localStorage.clear();
+    setSlips([]);
+  };
+
+  return (
+    <SlipDisplay slips={slips} clear={handleClearSlips} />
   );
 };
