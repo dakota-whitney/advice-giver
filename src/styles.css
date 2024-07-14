@@ -13,6 +13,10 @@ body {
 }
 
 ul {
-  margin: 10% 0 10px 0;
+  margin-top: 10%;
   font-size: 20px;
+}
+
+.btn-danger {
+  margin-top: 10px;
 }
