@@ -18,7 +18,7 @@ export const AdviceDisplay = (props) => {
         tabindex="-1"
         aria-hidden="true"
       >
-        <div className="modal-dialog">
+        <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-body">{props.slip}</div>
             <div className="modal-footer">
