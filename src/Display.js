@@ -4,6 +4,12 @@ import { AdviceSlips } from "./Provider";
 export const AdviceDisplay = (props) => {
   return (
     <div>
+    <h3>
+        Dakota's Advice Giver
+        <br />
+        <small class="text-body-secondary">Developed in React.js</small>
+      </h3>
+      <p>This app fetches positive vibes from <a href="https://api.adviceslip.com/" target="_blank">The Advice API</a></p>
       <button
         className="btn btn-primary btn-lg"
         data-bs-toggle="modal"
