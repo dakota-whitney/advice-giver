@@ -1,6 +1,3 @@
-import { useContext } from "react";
-import { AdviceSlips } from "./Provider";
-
 export const AdviceDisplay = (props) => {
   return (
     <div>
